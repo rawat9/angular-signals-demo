@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-header>Users List</mat-card-header>
+    <mat-selection-list multiple="false">
+        <mat-list-option *ngFor="let user of users()"
+         (click)="onSelected(user.id)"
+         [ngClass]="{'active': user.id === selectedUserId()}"
+        >
+            {{user.name}}
+        </mat-list-option>
+    </mat-selection-list>
+</mat-card>
+
+{{ selectedUserId() }}
